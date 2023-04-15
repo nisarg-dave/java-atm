@@ -74,7 +74,7 @@ class User {
      * Add an account for the user
      * @param anAccount the account to add
      */
-    public void addAccount(Account anAccount) {
+    void addAccount(Account anAccount) {
         this.accounts.add(anAccount);
     }
 
@@ -82,7 +82,7 @@ class User {
      * A getter method that returns the uuid
      * @return the uuid
      */
-    public String getUuid(){
+    String getUuid(){
         return this.uuid;
     }
 
@@ -91,7 +91,7 @@ class User {
      * @param aPin a pin that is entered by the user
      * @return true if they match, false if they don't
      */
-    public boolean validatePin(String aPin) {
+     boolean validatePin(String aPin) {
 
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -109,14 +109,14 @@ class User {
      * A getter method that returns the first name
      * @return first name of the user
      */
-       public String getFirstName(){
+    String getFirstName(){
         return this.firstName;
     }
 
     /**
      * Print summaries for the accounts of this user.
      */
-    public void printAccountsSummary(){
+    void printAccountsSummary(){
 
            System.out.printf("\n\n%s's accounts summary\n", this.firstName);
 
@@ -133,7 +133,7 @@ class User {
      * A getter method that returns the number of accounts
      * @return number of accounts
      */
-    public int numAccounts(){
+    int numAccounts(){
         return this.accounts.size();
     }
 
@@ -141,7 +141,7 @@ class User {
      * Prints the transaction history of an account
      * @param acctIdx the account index
      */
-    public void printAccTransHistory(int acctIdx){
+    void printAccTransHistory(int acctIdx){
         this.accounts.get(acctIdx).printTransHistory();
     }
 
@@ -150,7 +150,7 @@ class User {
      * @param accIdx the account index
      * @return the total balance
      */
-    public double getAcctBalance(int accIdx){
+    double getAcctBalance(int accIdx){
         return this.accounts.get(accIdx).getBalance();
     }
 
@@ -159,11 +159,11 @@ class User {
      * @param acctIdx the account index
      * @return the account id
      */
-    public String getAcctUUID(int acctIdx){
+    String getAcctUUID(int acctIdx){
         return this.accounts.get(acctIdx).getUuid();
     }
 
-    public void addAcctTransaction(int acctIdx, double amount, String memo){
+    void addAcctTransaction(int acctIdx, double amount, String memo){
         this.accounts.get(acctIdx).addTransaction(amount,memo);
     }
 }

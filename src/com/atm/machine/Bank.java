@@ -35,7 +35,7 @@ class Bank {
       * Generate a new id for the user.
       * @return the uuid
       */
-    public String getNewUserUUID() {
+    String getNewUserUUID() {
 
         // initialise
         String uuid = null;
@@ -69,7 +69,7 @@ class Bank {
      * Generate a new id for an account
      * @return the uuid
      */
-    public String getNewAccountUUID() {
+    String getNewAccountUUID() {
         // initialise
         String uuid = null;
         Random rng = new Random();
@@ -105,7 +105,7 @@ class Bank {
      * Add an account
      * @param anAccount the account to add
      */
-    public void addAccount(Account anAccount) {
+    void addAccount(Account anAccount) {
         this.accounts.add(anAccount);
     }
 
@@ -117,7 +117,7 @@ class Bank {
      * @param pin the user's pin
      * @return the new User Object
      */
-    public User addUser(String firstName, String lastName, String pin) {
+    User addUser(String firstName, String lastName, String pin) {
 
         // create a new User object and add it oto our list
         User newUser = new User(firstName, lastName, pin, this);
@@ -137,7 +137,7 @@ class Bank {
      * @param pin the pin of the user
      * @return the User Object if successful or nul if not
      */
-    public User userLogin(String userID, String pin){
+    User userLogin(String userID, String pin){
 
         // search through list of users
         for (User u : this.users){
@@ -154,7 +154,7 @@ class Bank {
      * A getter method that returns the name of the bank
      * @return the name of the bank
      */
-    public String getName(){
+    String getName(){
         return this.name;
     }
 

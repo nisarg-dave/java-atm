@@ -48,7 +48,7 @@ import java.util.ArrayList;
       * A getter method that returns uuid
       * @return the uuid
       */
-    public String getUuid(){
+    String getUuid(){
         return this.uuid;
     }
 
@@ -56,7 +56,7 @@ import java.util.ArrayList;
       * Get summary line for the account
       * @return the string summary
       */
-    public String getSummaryLine(){
+    String getSummaryLine(){
 
         // get the account balance
         double balance = this.getBalance();
@@ -76,7 +76,7 @@ import java.util.ArrayList;
       * Getter to get balance of account
       * @return the total balance
       */
-    public double getBalance(){
+    double getBalance(){
         double balance = 0;
         for (Transaction t: this.transactions){
             balance += t.getAmount();
@@ -87,7 +87,7 @@ import java.util.ArrayList;
      /**
       * Print the transaction history of the account
       */
-    public void printTransHistory(){
+    void printTransHistory(){
 
         System.out.printf("\nTransaction history for account %s\n", this.uuid);
         for(int t = this.transactions.size()-1; t>=0; t--){
@@ -101,7 +101,7 @@ import java.util.ArrayList;
       * @param amount the amount of the transaction
       * @param memo the memo
       */
-    public void addTransaction(double amount, String memo){
+    void addTransaction(double amount, String memo){
         // Create new transaction object and add it to our list
         Transaction newTrans = new Transaction(amount, memo, this);
         this.transactions.add(newTrans);
