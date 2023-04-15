@@ -104,5 +104,67 @@ class User {
         }
         return false;
     }
+
+    /**
+     * A getter method that returns the first name
+     * @return first name of the user
+     */
+       public String getFirstName(){
+        return this.firstName;
+    }
+
+    /**
+     * Print summaries for the accounts of this user.
+     */
+    public void printAccountsSummary(){
+
+           System.out.printf("\n\n%s's accounts summary\n", this.firstName);
+
+           int accountIndex = 0;
+           for(Account a: this.accounts){
+               accountIndex += 1;
+               System.out.printf("%d) %s", accountIndex, a.getSummaryLine());
+           }
+           System.out.println();
+
+    }
+
+    /**
+     * A getter method that returns the number of accounts
+     * @return number of accounts
+     */
+    public int numAccounts(){
+        return this.accounts.size();
+    }
+
+    /**
+     * Prints the transaction history of an account
+     * @param acctIdx the account index
+     */
+    public void printAccTransHistory(int acctIdx){
+        this.accounts.get(acctIdx).printTransHistory();
+    }
+
+    /**
+     * Gets the account balance
+     * @param accIdx the account index
+     * @return the total balance
+     */
+    public double getAcctBalance(int accIdx){
+        return this.accounts.get(accIdx).getBalance();
+    }
+
+    /**
+     * Gets the account id
+     * @param acctIdx the account index
+     * @return the account id
+     */
+    public String getAcctUUID(int acctIdx){
+        return this.accounts.get(acctIdx).getUuid();
+    }
+
+    public void addAcctTransaction(int acctIdx, double amount, String memo){
+        this.accounts.get(acctIdx).addTransaction(amount,memo);
+    }
 }
 
